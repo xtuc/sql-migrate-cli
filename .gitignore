@@ -1,0 +1,3 @@
+cmd/migrate/migrate
+cmd/undo/undo
+mysql-migrations
