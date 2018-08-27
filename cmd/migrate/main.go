@@ -15,6 +15,8 @@ var (
 	pass = os.Getenv("MYSQL_PASS")
 	host = os.Getenv("MYSQL_HOST")
 	db   = os.Getenv("MYSQL_DB")
+
+	dir = os.Getenv("MIGRATION_DIR")
 )
 
 func connect() (*sql.DB, error) {
@@ -30,7 +32,7 @@ func connect() (*sql.DB, error) {
 
 func main() {
 	migrations := &migrate.FileMigrationSource{
-		Dir: "mysql-migrations",
+		Dir: dir,
 	}
 
 	db, err := connect()
